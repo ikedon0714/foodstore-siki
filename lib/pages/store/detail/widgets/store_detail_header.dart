@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../models/stores/store_model.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../models/stores/store_model.dart';
+
 
 class StoreDetailHeader extends StatelessWidget {
   final StoreModel store;

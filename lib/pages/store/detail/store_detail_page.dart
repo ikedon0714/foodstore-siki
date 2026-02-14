@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodstore_siki/pages/store/detail/widgets/store_detail_header.dart';
+import 'package:foodstore_siki/pages/store/detail/widgets/store_detail_table.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../core/theme/app_colors.dart';
-import '../../models/stores/store_model.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../models/stores/store_model.dart';
 import 'hooks/use_store_detail.dart';
-import 'widgets/store_detail_header.dart';
-import 'widgets/store_detail_table.dart';
+
 
 /// 店舗詳細ページ（責務：レイアウト統括のみ）
 class StoreDetailPage extends HookConsumerWidget {
@@ -21,10 +22,11 @@ class StoreDetailPage extends HookConsumerWidget {
     final vm = useStoreDetail(context: context, ref: ref);
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: const Text('店舗情報'),
         backgroundColor: AppColors.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        foregroundColor: AppColors.textOnPrimary,
       ),
       body: SingleChildScrollView(
         child: Column(

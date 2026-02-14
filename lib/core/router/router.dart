@@ -14,8 +14,9 @@ import '../../pages/main_shell.dart';
 import '../../pages/onboarding/set_basic_info.dart';
 import '../../pages/stamp/stamp_code_input/stamp_code_input.dart';
 import '../../pages/stamp/stamp_scan/stamp_scan_page.dart';
-import '../../pages/store/store_detail_page.dart';
-import '../../pages/store/store_list_page.dart';
+import '../../pages/store/add/store_add_page.dart'; // ★ここを新規追加
+import '../../pages/store/detail/store_detail_page.dart';
+import '../../pages/store/list/store_list_page.dart';
 import '../../pages/sub_menu/my_page.dart';
 import '../../pages/sub_menu/setting_page.dart';
 import '../../pages/top/top_page.dart';
@@ -69,8 +70,24 @@ final routerProvider = Provider<GoRouter>((ref) {
             ],
           ),
           // 店舗・メニュー
-          GoRoute(path: '/stores', builder: (context, state) => const StoreListPage()),
-          GoRoute(path: '/stores-detail', builder: (context, state) => StoreDetailPage(store: state.extra as StoreModel)),
+          // 店舗（list / add / detail をネスト化）
+          GoRoute(
+            path: '/stores',
+            builder: (context, state) => const StoreListPage(),
+            routes: [
+              GoRoute(
+                path: 'add',
+                builder: (context, state) => const StoreAddPage(), // ★ここを新規追加
+              ),
+              GoRoute(
+                path: 'detail',
+                builder: (context, state) {
+                  final store = state.extra as StoreModel;
+                  return StoreDetailPage(store: store);
+                },
+              ),
+            ],
+          ),
           GoRoute(
             path: '/menu',
             builder: (context, state) => const MenuPage(),

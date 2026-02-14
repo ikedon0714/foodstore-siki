@@ -3,8 +3,9 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_theme.dart';
-import '../../../core/widgets/app_text_field.dart';
+import '../../../../core/theme/app_theme.dart';
+import '../../../../core/widgets/app_text_field.dart';
+import '../store_add_constants.dart';
 import 'store_add_parts.dart';
 
 class StoreAddImageSection extends StatelessWidget {
@@ -308,42 +309,3 @@ class StoreAddSubmitSection extends StatelessWidget {
     );
   }
 }
-
-/// ======= constants =======
-
-const List<String> malaysianStates = [
-  'Kuala Lumpur',
-  'Selangor',
-  'Penang',
-  'Johor',
-  'Melaka',
-  'Negeri Sembilan',
-  'Perak',
-  'Pahang',
-  'Terengganu',
-  'Kelantan',
-  'Kedah',
-  'Perlis',
-  'Sabah',
-  'Sarawak',
-  'Putrajaya',
-  'Labuan',
-];
-
-const List<String> weekDays = [
-  '月曜日',
-  '火曜日',
-  '水曜日',
-  '木曜日',
-  '金曜日',
-  '土曜日',
-  '日曜日',
-];
-
-/// 価格帯リスト（RM表記維持）
-const List<String> priceRanges = [
-  'RM',
-  'RM RM',
-  'RM RM RM',
-  'RM RM RM RM',
-];

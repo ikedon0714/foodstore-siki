@@ -3,10 +3,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../core/utils/app_snack_bar.dart';
-import '../../../core/widgets/app_button.dart';
-import 'store_add_sections.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/utils/app_snack_bar.dart';
+import '../../../../core/widgets/app_button.dart';
+import '../store_add_constants.dart';
 
 class StoreAddSectionTitle extends StatelessWidget {
   const StoreAddSectionTitle({super.key, required this.title});

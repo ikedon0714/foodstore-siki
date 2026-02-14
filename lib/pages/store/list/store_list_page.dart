@@ -1,14 +1,15 @@
 // lib/pages/store/store_list_page.dart
 import 'package:flutter/material.dart';
 import 'package:foodstore_siki/notifiers/auth_notifier.dart';
-import 'package:foodstore_siki/pages/store/store_add_page.dart';
+import 'package:foodstore_siki/pages/store/add/store_add_page.dart';
+import 'package:foodstore_siki/pages/store/list/widgets/store_card.dart';
+import 'package:foodstore_siki/pages/store/list/widgets/store_list_header.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../core/theme/app_colors.dart';
-import '../../notifiers/store_notifier.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../notifiers/store_notifier.dart';
 import 'hooks/use_store_list.dart';
-import 'widgets/store_card.dart';
-import 'widgets/store_list_header.dart';
+
 
 class StoreListPage extends HookConsumerWidget {
   const StoreListPage({super.key});
@@ -71,13 +72,7 @@ class StoreListPage extends HookConsumerWidget {
           tooltip: '店舗を追加',
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.textOnPrimary,
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const StoreAddPage(),
-              ),
-            );
-          },
+          onPressed: () => vm.openStoreAdd,
           child: const Icon(Icons.add),
         )
         : null,

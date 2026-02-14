@@ -5,8 +5,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../models/stores/store_model.dart';
-import '../../../notifiers/store_notifier.dart';
+
+import '../../../../models/stores/store_model.dart';
+import '../../../../notifiers/store_notifier.dart';
 import '../widgets/store_filter_sheet.dart';
 
 /// StoreList 用 ViewModel
@@ -68,7 +69,11 @@ class StoreListViewModel {
 
   void openStoreDetail(StoreModel store) {
     // TODO: 店舗詳細ページを実装したら差し替え
-    context.go('/stores-detail', extra: store);
+    context.push('/store/detail', extra: store);
+  }
+
+  void openStoreAdd() {
+    context.push('store/add');
   }
 }
 

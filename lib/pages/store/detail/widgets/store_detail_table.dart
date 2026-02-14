@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../models/stores/store_model.dart';
+import '../../../../models/stores/store_model.dart';
 
 class StoreDetailTable extends StatelessWidget {
   final StoreModel store;

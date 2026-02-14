@@ -1,8 +1,10 @@
 // lib/pages/store/widgets/store_card.dart
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
-import '../../../models/stores/store_model.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../models/stores/store_model.dart';
+
+
 
 class StoreCard extends StatelessWidget {
   final StoreModel store;
